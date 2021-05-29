@@ -8,6 +8,13 @@ HEALTHCHECK --interval=60s --timeout=15s \
             CMD smbclient -L \\localhost -U % -m SMB3
 
 VOLUME ["/etc/samba","/mnt/datos"]
-
+RUN adduser \
+   --system \
+   --shell /bin/bash \
+   --gecos ‘User for managing of git version control’ \
+   --group \
+   --disabled-password \
+   --home /home/git \
+   datos
 ADD samba-entrypoint.sh /root/samba-entrypoint.sh
 ENTRYPOINT [ "/root/samba-entrypoint.sh" ]
