@@ -10,6 +10,5 @@ jobs:
     steps:
         - uses: actions/checkout@v2
         - name: run
-          with:
-            path: ./pihole
-            run: docker-compose up -d
+          working-directory: ./pihole
+          run: docker-compose up -d
