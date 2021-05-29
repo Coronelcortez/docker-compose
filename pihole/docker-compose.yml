@@ -32,7 +32,6 @@ services:
          source: pihole_dnsmasq
          target: /etc/dnsmasq.d/
     restart: unless-stopped
-
 volumes:
     pihole_etc:
       name: pihole_etc
