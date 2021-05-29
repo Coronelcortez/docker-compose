@@ -12,6 +12,7 @@ jobs:
       run: docker build -t docker-samba .
   deploy:
     runs-on: self-hosted
+    needs: build
     steps:
     - name: down
       working-directory: ./samba
