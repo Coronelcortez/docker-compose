@@ -9,5 +9,5 @@ HEALTHCHECK --interval=60s --timeout=15s \
 
 #VOLUME ["/etc", "/var/cache/samba", "/var/lib/samba", "/var/log/samba", "/run/samba"]
 
-ADD docker-entrypoint.sh /root/docker-entrypoint.sh
-ENTRYPOINT [ "/root/docker-entrypoint.sh" ]
+ADD samba-entrypoint.sh /root/samba-entrypoint.sh
+ENTRYPOINT [ "/root/samba-entrypoint.sh" ]
