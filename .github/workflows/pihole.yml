@@ -8,6 +8,8 @@ jobs:
   deploy:
     runs-on: self-hosted
     steps:
-      - uses: actions/checkout@v2
-      - name: run
-        run: docker-compose up -d
+        - uses: actions/checkout@v2
+        - name: run
+          with:
+            path: ./pihole
+            run: docker-compose up -d
