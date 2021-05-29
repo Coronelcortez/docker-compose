@@ -5,12 +5,11 @@ services:
     image: pihole/pihole:latest
     networks:
       - proxy_net
-    expose:
-      - "80"
     ports:
       - "53:53/tcp"
       - "53:53/udp"
-      - "443:443/tcp"  # catches ads on port 443 or so they say
+      - "80:80/udp"
+      - "443:443/tcp"
     env_file: .env
     environment:
       VIRTUAL_HOST: "pihole.casa.lan"
