@@ -7,6 +7,9 @@ jobs:
   deploy:
     runs-on: self-hosted
     steps:
-    - name: run
+    - name: down
+      working-directory: ./pihole
+      run: docker-compose down
+    - name: up
       working-directory: ./pihole
       run: docker-compose up -d

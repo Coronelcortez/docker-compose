@@ -7,12 +7,15 @@ jobs:
   build:
     runs-on: self-hosted
     steps:
-    - name: run
+    - name: build
       working-directory: ./samba
       run: docker build -t docker-samba .
   deploy:
     runs-on: self-hosted
     steps:
-    - name: run
+    - name: down
+      working-directory: ./samba
+      run: docker-compose down
+    - name: up
       working-directory: ./samba
       run: docker-compose up -d
