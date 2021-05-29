@@ -1,5 +1,8 @@
 name: Docker Compose Actions Workflow for pihole folder
-on: push
+on:
+  push:
+    paths:
+    - 'pihole/**'
 jobs:
   deploy:
     runs-on: self-hosted
