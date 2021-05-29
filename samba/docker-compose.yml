@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  pihole:
+    container_name: docker-samba
+    image: docker-samba:latest
+    ports:
+      - "445:445/tcp"
+    volumes:
+      - './smb.conf:/etc/samba/smb.conf'
+      - '/media/datos:/mnt/datos'
+    restart: unless-stopped
