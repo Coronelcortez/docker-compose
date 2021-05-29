@@ -1,0 +1,48 @@
+version: "3.7"
+services:
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:latest
+    networks:
+      - proxy_net
+    expose:
+      - "80"
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "443:443/tcp"  # catches ads on port 443 or so they say
+    env_file: .env
+    environment:
+      VIRTUAL_HOST: "pihole.casa.lan"
+      TZ: 'America/Argentina/Buenos_Aires'
+      WEBPASSWORD: ${PASSWORD}
+      ServerIP: ${SERVER_IP}
+      # Cloudflare
+      DNS1: "1.1.1.1"
+      DNS2: "1.0.0.1"
+      NETWORK_ACCESS: internal
+    dns:
+      - "1.1.1.1"
+      - "1.0.0.1"
+    volumes:
+       - type: volume
+         source: pihole_etc
+         target: /etc/pihole/
+       - type: volume
+         source: pihole_dnsmasq
+         target: /etc/dnsmasq.d/
+    restart: unless-stopped
+
+volumes:
+    pihole_etc:
+      name: pihole_etc
+
+    pihole_dnsmasq:
+      name: pihole_dnsmasq
+
+    static_content:
+      name: proxy_static_content
+    
+networks:
+  proxy_net:
+    name: proxy_net
