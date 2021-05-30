@@ -15,7 +15,6 @@ services:
     tty: true
     volumes:
       - /etc/samba:/etc/samba:ro
-      - /var/lib/samba:/var/lib/samba
       - /etc/passwd:/etc/passwd:ro
       - /etc/shadow:/etc/shadow:ro
       - ./smb.conf:/etc/samba/smb.conf
