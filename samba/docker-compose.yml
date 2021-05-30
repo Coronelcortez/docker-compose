@@ -1,7 +1,7 @@
 version: "3.7"
 
 services:
-  pihole:
+  samba:
     container_name: docker-samba
     image: docker-samba:latest
     ports:
