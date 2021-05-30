@@ -10,4 +10,5 @@ HEALTHCHECK --interval=60s --timeout=15s \
 VOLUME ["/etc","/mnt/datos"]
 RUN adduser --system --disabled-password datos
 
-ENTRYPOINT ["./samba-entrypoint.sh"]
+ADD samba-entrypoint.sh /root/samba-entrypoint.sh
+ENTRYPOINT [ "/root/samba-entrypoint.sh" ]
