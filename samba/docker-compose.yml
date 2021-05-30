@@ -14,7 +14,6 @@ services:
     stdin_open: true
     tty: true
     volumes:
-      - /etc/samba:/etc/samba:ro
       - /etc/passwd:/etc/passwd:ro
       - /etc/shadow:/etc/shadow:ro
       - ./smb.conf:/etc/samba/smb.conf
