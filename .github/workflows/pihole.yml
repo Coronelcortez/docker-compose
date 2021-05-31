@@ -9,6 +9,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: down
+      continue-on-error: true
       working-directory: ./pihole
       run: docker-compose down
     - name: up
