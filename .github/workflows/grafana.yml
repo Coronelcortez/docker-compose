@@ -1,0 +1,16 @@
+name: Docker Compose Actions Workflow for grafana folder
+on:
+  push:
+    paths:
+    - grafana/**
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+    - uses: actions/checkout@master
+    - name: down
+      working-directory: ./grafana
+      run: docker-compose down
+    - name: up
+      working-directory: ./grafana
+      run: docker-compose up -d
