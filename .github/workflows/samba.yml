@@ -16,6 +16,7 @@ jobs:
     needs: build
     steps:
     - name: down
+      continue-on-error: true
       working-directory: ./samba
       run: docker-compose down
     - name: up
