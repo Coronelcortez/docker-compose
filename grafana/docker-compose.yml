@@ -1,11 +1,13 @@
 version: "3.7"
 
+volumes:
+  grafana: {}
+  
 services:
   grafana:
     container_name: grafana
     image: grafana/grafana
-    volumes:
-      grafana: {}
+
     ports:
       - "3000:3000"
     restart: unless-stopped
