@@ -1,0 +1,16 @@
+name: Docker Compose Actions Workflow for prometheus folder
+on:
+  push:
+    paths:
+    - prometheus/**
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+    - uses: actions/checkout@master
+    - name: down
+      working-directory: ./prometheus
+      run: docker-compose down
+    - name: up
+      working-directory: ./prometheus
+      run: docker-compose up -d
