@@ -9,3 +9,7 @@ services:
     restart: unless-stopped
     volumes:
       - /media/datos/volumes/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+  node-exporter:
+    image: prom/node-exporter
+    ports:
+      - '9100:9100'
