@@ -1,8 +1,7 @@
 version: "3.7"
-
 volumes:
   grafana: {}
-  
+
 services:
   grafana:
     container_name: grafana
