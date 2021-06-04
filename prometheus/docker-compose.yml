@@ -1,4 +1,5 @@
 version: "3.7"
+
 services:
   prometheus-server:
     container_name: prometheus-server
