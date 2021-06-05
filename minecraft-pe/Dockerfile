@@ -1,6 +1,5 @@
-FROM alpine as minecraft-pe
-RUN apk --no-cache --no-progress upgrade && \
-    apk --no-cache --no-progress add --virtual build-dependencies build-base alpine-sdk libtool autoconf bison wget bash
+FROM ubuntu as minecraft-pe
+RUN apt update && apt upgrade -y && apt install build-essential libtool-bin autoconf bison -y
 
 EXPOSE 19132
 
