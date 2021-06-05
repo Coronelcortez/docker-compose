@@ -1,0 +1,11 @@
+version: "3.7"
+
+services:
+  minecrafts:
+    container_name: minecraft
+    image: minecraft-pe:latest
+    ports:
+      - 19132:19132
+    restart: unless-stopped
+    stdin_open: true
+    tty: true

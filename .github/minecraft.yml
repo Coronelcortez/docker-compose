@@ -1,0 +1,24 @@
+name: github Actions Workflow for minecraft folder
+on:
+  push:
+    paths:
+    - minecraft/**
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+    - uses: actions/checkout@master
+    - name: build
+      working-directory: ./minecraft
+      run: docker build -t minecraft-pe .
+  deploy:
+    runs-on: self-hosted
+    needs: build
+    steps:
+    - name: down
+      continue-on-error: true
+      working-directory: ./minecraft
+      run: docker-compose down
+    - name: up
+      working-directory: ./minecraft
+      run: docker-compose up -d
