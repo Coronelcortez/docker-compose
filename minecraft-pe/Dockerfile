@@ -1,6 +1,6 @@
 FROM alpine as minecraft-pe
 RUN apk --no-cache --no-progress upgrade && \
-    apk --no-cache --no-progress add bash install build-essential libtool-bin autoconf bison
+    apk --no-cache --no-progress add --virtual build-dependencies build-base alpine-sdk libtool-bin autoconf bison bash
 
 EXPOSE 19132
 
