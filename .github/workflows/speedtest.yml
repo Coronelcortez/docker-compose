@@ -1,0 +1,17 @@
+name: Docker Compose Actions Workflow for speedtest folder
+on:
+  push:
+    paths:
+    - speedtest/**
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+    - uses: actions/checkout@master
+    - name: down
+      continue-on-error: true
+      working-directory: ./speedtest
+      run: docker-compose down
+    - name: up
+      working-directory: ./speedtest
+      run: docker-compose up -d

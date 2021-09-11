@@ -1,0 +1,9 @@
+version: "3.7"
+
+services:
+  prometheus-server:
+    container_name: speedtest
+    image: adolfintel/speedtest
+    ports:
+      - "8080:80"
+    restart: unless-stopped
