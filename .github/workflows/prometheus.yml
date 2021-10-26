@@ -1,5 +1,6 @@
 name: Docker Compose Actions Workflow for prometheus folder
 on:
+  workflow_dispatch:
   push:
     paths:
     - prometheus/**
