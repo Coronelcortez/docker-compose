@@ -1,6 +1,7 @@
 name: Docker Compose Actions Workflow for pihole folder
 on:
   push:
+  workflow_dispatch:
     paths:
     - pihole/**
 jobs:
