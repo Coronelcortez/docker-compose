@@ -8,4 +8,4 @@ services:
       - "9090:9090"
     restart: unless-stopped
     volumes:
-      - /media/datos/volumes/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - /media/volumes/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
