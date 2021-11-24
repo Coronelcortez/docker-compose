@@ -10,9 +10,9 @@
           - TZ=Europe/London
           - TRANSMISSION_WEB_HOME=/combustion-release/ #optional
         volumes:
-          - /media/datos/volumes/trasmission/config:/config
-          - /media/datos/datos/download:/downloads
-          - /media/datos/volumes/trasmission/config/watch:/watch
+          - /media/volumes/transmission/config:/config
+          - /media/datos/download:/downloads
+          - /media/volumes/transmission/config/watch:/watch
         ports:
           - 9091:9091
           - 51413:51413
