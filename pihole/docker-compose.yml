@@ -13,8 +13,8 @@ services:
       WEBPASSWORD: ${PASSWORD}
     # Volumes store your data between container upgrades
     volumes:
-      - '/media/datos/volumes/pihole/etc-pihole/:/etc/pihole/'
-      - '/media/datos/volumes/pihole/etc-dnsmasq.d/:/etc/dnsmasq.d/'
+      - '/media/volumes/pihole/etc-pihole/:/etc/pihole/'
+      - '/media/volumes/pihole/etc-dnsmasq.d/:/etc/dnsmasq.d/'
     # Recommended but not required (DHCP needs NET_ADMIN)
     #   https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
     cap_add:
